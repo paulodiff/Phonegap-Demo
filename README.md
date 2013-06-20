@@ -17,11 +17,16 @@ Extract d:\Downloads\phonegap-2.8.0.zip\phonegap-2.8.0\lib\android\example\asset
 
 SVILUPPO
 ----------------------
-Impostazione Progetto GITHUB
-jqmobi - INTEL + libreria PhoneGap + TEST API
-+ Deploy su PhoneGap Builder ADOBE
-BASE AngularJS http://tech.pro/tutorial/1336/phonegap-and-angularjs-the-start
-EFFETTI swipe ecc.
++ Impostazione Progetto GITHUB [OK]
++ Ambiente PhoneGap
+- PROBLEMI CON jqmobi - INTEL 
++ Test API di base
++ Topcoat
+* Accesso ai dati MongoDB
+* Mappe con http://leafletjs.com/examples/mobile.html
+* Deploy su PhoneGap Builder ADOBE
+* BASE AngularJS http://tech.pro/tutorial/1336/phonegap-and-angularjs-the-start
+* EFFETTI swipe ecc.
 Integrazione con Jquery + Jqmobi CSS topcoat ecc.
 Accesso ai dati http://jaydata.org/getstarted - MongoDB library
 

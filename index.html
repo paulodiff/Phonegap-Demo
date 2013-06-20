@@ -1,35 +1,33 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
+		<meta http-equiv="pragma" content="no-cache" />
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link href="topcoat/css/topcoat-mobile-dark.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World1</title>
+        <title>Phone Gap Demo - Topcoat - Zepto - GPS - Maps - MongoDB</title>
     </head>
     <body>
-	<h1>Phone Gap Demo - Jqmobi</h1>
+	<div class="topcoat-navigation-bar">
+		<div class="topcoat-navigation-bar__item left quarter">
+			<a id="btn-back" class="topcoat-icon-button--quiet" href="#">
+			  <span class="topcoat-icon topcoat-icon--back"></span>
+			</a>
+		</div>
+		<div class="topcoat-navigation-bar__item center half">
+			<h1 class="topcoat-navigation-bar__title">Phone Gap Demo - Topcoat - Zepto - GPS - Maps - MongoDB</h1>
+		</div>
+		<div class="topcoat-navigation-bar__item right quarter">
+			<!--<a class="topcoat-icon-button--quiet">Link</a>-->
+		</div>
+	</div>
+
+
 	
 	<div id="welcomeView" style="padding:70px 70px 0px 70px;display: none;font-size: 1.1rem;">
-		<h2>Welcome to PhoneGap Sync</h2>
+		<h2>Phone Gap Demo - Topcoat - Zepto - GPS - Maps - MongoDB</h2>
 		<h4>A sample application for the Dropbox Sync PhoneGap Plugin</h4>
 		<p>Once you link this application to your Dropbox account, an /Apps/PhoneGapSync folder is created in your Dropbox.
 			All the files you move to that folder on your computer will automatically be available in this app.
@@ -49,9 +47,28 @@
 			<p id="deviceProperties">Loading device properties...</p>
 		</div>
 
-		
+	
+<div id="appView">
+    <div id="scroller" class="topcoat-list__container">
+        <h3 id="path" class="topcoat-list__header" style="border-right: solid 1px #3b3e40;">/</h3>
+        <ul id="fileList" class="topcoat-list">
+			<li class="topcoat-list__item"><a href="#test">Test01</li>
+			<li class="topcoat-list__item"><a href="#test">Test02</li>
+		</ul>
+        <h3 id="noFiles" style="position:absolute;top:260px;left:110px;display:none;">No files</h3>
+    </div>
+
+    <h3 id="filePath" class="topcoat-list__header">&nbsp;</h3>
+
+    <div id="content">
+        <img id="image" style="display: none;"/>
+        <div id="text" style="display: none;"></div>
+    </div>
+</div>
+	
 		
         <script type="text/javascript" src="cordova-w8.js"></script>
+		<script type="text/javascript" src="moment.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();

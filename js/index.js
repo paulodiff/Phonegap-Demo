@@ -106,25 +106,48 @@ function onOffline() {
 }
 
 function networkDetection() {
+	
+	
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.NONE]     = 'No network connection';
+	
+	
 	if (isPhoneGapReady) {
-		// as long as the connection type is not none,
-		// the device should have Internet access
-		if (navigator.network.connection.type != Connection.NONE) {
-			isConnected = true;
-		}
+
+		isConnected = false;
+		isHighSpeed = false;
+
+		var networkState = navigator.network.connection.type;
+	
+	
 		// determine if this connection is high speed or not
-		switch (navigator.network.connection.type) {
+		switch (networkState) {
+			case Connection.NONE:
+				console.log('sw0');
+				isConnected = false;
+				isHighSpeed = false;
 			case Connection.ETHERNET:
 			case Connection.WIFI:
 			case Connection.CELL_3G:
 			case Connection.CELL_4G:
+				console.log('sw1');
+				isConnected = true;
 				isHighSpeed = true;
-			break;
-			
-			default:
+			case Connection.CELL_2G:
+				console.log('sw3');
+				isConnected = true;
 				isHighSpeed = false;
 			break;
 		}
+		
+		console.log('networkDetection ... ' + states[networkState] + ' ' + isConnected + ' ' + isHighSpeed + ' ' + moment().unix());
 	}
 }
 
@@ -138,16 +161,20 @@ function onDeviceReady() {
 
 function displayPhoneStatus() {
 
+console.log('displayPhoneStatus ...');
+
 var element = document.getElementById('deviceProperties');
 
-element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+element.innerHTML = 
+							'Time: ' + moment().unix() + '<br />' + 
+							'Device Name: '     + device.name     + '<br />' + 
                             'Device Cordova: '  + device.cordova  + '<br />' + 
                             'Device Platform: ' + device.platform + '<br />' + 
                             'Device UUID: '     + device.uuid     + '<br />' + 
                             'Device Version: '  + device.version  + '<br />' +
-							'iConnected: '  + isConnected  + '<br />' +
+							'isConnected: '  + isConnected  + '<br />' +
 							'isHighSpeed: '  + isHighSpeed  + '<br />' +
-							'isPhoneGapReady: '  + isPhoneGapReady  + '<br />'
+							'isPhoneGapReady: '  + isPhoneGapReady  + '<br />';
 
 	
 }
