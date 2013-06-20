@@ -19,6 +19,7 @@ SVILUPPO
 ----------------------
 + Impostazione Progetto GITHUB [OK]
 + Ambiente PhoneGap
+	http://127.0.0.1:8989/gitroot/Phonegap-Demo/index.html?enableripple=cordova-2.0.0
 - PROBLEMI CON jqmobi - INTEL 
 + Test API di base
 + Topcoat

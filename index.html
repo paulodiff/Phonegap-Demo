@@ -5,57 +5,42 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-		<link href="topcoat/css/topcoat-mobile-dark.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link href="topcoat/css/topcoat-mobile-light.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="index.css" />
         <title>Phone Gap Demo - Topcoat - Zepto - GPS - Maps - MongoDB</title>
     </head>
+	
     <body>
 	<div class="topcoat-navigation-bar">
-		<div class="topcoat-navigation-bar__item left quarter">
-			<a id="btn-back" class="topcoat-icon-button--quiet" href="#">
-			  <span class="topcoat-icon topcoat-icon--back"></span>
-			</a>
-		</div>
-		<div class="topcoat-navigation-bar__item center half">
+		<div class="topcoat-navigation-bar__item center full">
 			<h1 class="topcoat-navigation-bar__title">Phone Gap Demo - Topcoat - Zepto - GPS - Maps - MongoDB</h1>
-		</div>
-		<div class="topcoat-navigation-bar__item right quarter">
-			<!--<a class="topcoat-icon-button--quiet">Link</a>-->
-		</div>
-	</div>
-
-
-	
-	<div id="welcomeView" style="padding:70px 70px 0px 70px;display: none;font-size: 1.1rem;">
-		<h2>Phone Gap Demo - Topcoat - Zepto - GPS - Maps - MongoDB</h2>
-		<h4>A sample application for the Dropbox Sync PhoneGap Plugin</h4>
-		<p>Once you link this application to your Dropbox account, an /Apps/PhoneGapSync folder is created in your Dropbox.
-			All the files you move to that folder on your computer will automatically be available in this app.
-			The Dropbox app does not need to be installed on your device. The synchronization process is entirely managed by the plugin.</p>
-		<p>The Dropbox Sync PhoneGap plugin makes it incredibly easy to write synchronization-based applications:
-			synchronized photo viewer, synchronized notes, etc.
-		</p>
-		<br/>
-		<br/>
-		<div style="width: 100%;text-align: center">
-			<a id="btn-link" class="topcoat-button--large--cta">Link to Dropbox</a>
 		</div>
 	</div>
 	
 		
-		<div id="phonegap_data">
-			<p id="deviceProperties">Loading device properties...</p>
-		</div>
-
+    <div class='details'>
 	
-<div id="appView">
-    <div id="scroller" class="topcoat-list__container">
-        <h3 id="path" class="topcoat-list__header" style="border-right: solid 1px #3b3e40;">/</h3>
-        <ul id="fileList" class="topcoat-list">
-			<li class="topcoat-list__item"><a href="#test">Test01</li>
-			<li class="topcoat-list__item"><a href="#test">Test02</li>
+	<p>PhoneGap data<p>
+	<p id="deviceProperties">Loading device properties...</p>
+	<a class="topcoat-button--cta" >Button</a>	
+	
+	<a class="topcoat-icon-button">
+		<span class="topcoat-icon topcoat-icon--menu-stack"></span>
+	</a>
+
+	<a href="#" onclick="showAlert(); return false;" id="btnAddItem" class="topcoat-icon-button" >
+		<span class="topcoat-icon icon-mail"></span>
+	</a>
+	
+
+
+    
+	<div id="scroller" class="topcoat-list__container">
+        <h3 id="path" class="topcoat-list__header" style="border-right: solid 1px #3b3e40;">PhoneGap Detail</h3>
+		<ul class="topcoat-list list actions">
+			<li class="topcoat-list__item"><a href="#test">Test01<div class="action-icon icon-mail"></div></a></li>
+			<li class="topcoat-list__item"><a href="#test">Test02<div class="action-icon icon-sms"></div>	</a></li>
 		</ul>
-        <h3 id="noFiles" style="position:absolute;top:260px;left:110px;display:none;">No files</h3>
     </div>
 
     <h3 id="filePath" class="topcoat-list__header">&nbsp;</h3>
@@ -67,8 +52,8 @@
 </div>
 	
 		
-        <script type="text/javascript" src="cordova-w8.js"></script>
-		<script type="text/javascript" src="moment.js"></script>
+        <script type="text/javascript" src="_cordova.js"></script>
+		<script type="text/javascript" src="jquery-1.10.1.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();

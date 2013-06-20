@@ -26,6 +26,9 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+		 $('#btn001').click(function() {
+				alert("Handler for .click() called.");
+		});
     },
     // Bind Event Listeners
     //
@@ -146,8 +149,8 @@ function networkDetection() {
 				isHighSpeed = false;
 			break;
 		}
-		
-		console.log('networkDetection ... ' + states[networkState] + ' ' + isConnected + ' ' + isHighSpeed + ' ' + moment().unix());
+
+		console.log('networkDetection ... ' + states[networkState] + ' ' + isConnected + ' ' + isHighSpeed );
 	}
 }
 
@@ -165,8 +168,10 @@ console.log('displayPhoneStatus ...');
 
 var element = document.getElementById('deviceProperties');
 
+var time_stamp = new Date().getTime();
+
 element.innerHTML = 
-							'Time: ' + moment().unix() + '<br />' + 
+							'Time: ' + time_stamp + '<br />' + 
 							'Device Name: '     + device.name     + '<br />' + 
                             'Device Cordova: '  + device.cordova  + '<br />' + 
                             'Device Platform: ' + device.platform + '<br />' + 
@@ -179,3 +184,19 @@ element.innerHTML =
 	
 }
 
+  // alert dialog dismissed
+    function alertDismissed() {
+        // do something
+    }
+
+
+ function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+ }
+ 
+ 
