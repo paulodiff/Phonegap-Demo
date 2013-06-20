@@ -16,6 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ 
+var isConnected = false;
+var isHighSpeed = false;
+var isPhoneGapReady = false;
+ 
+ 
 var app = {
     // Application Constructor
     initialize: function() {
@@ -27,6 +33,10 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+		document.addEventListener('load', this.onLoad, false);
+		document.addEventListener('offline', this.onOffline, false);
+		document.addEventListener('online', this.onOnline, false);
+		
     },
     // deviceready Event Handler
     //
@@ -35,15 +45,110 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
+
+    onLoad: function() {
+        app.receivedEvent('load');
+    },
+
+    onOffline: function() {
+        app.receivedEvent('offline');
+    },
+
+	onOnline: function() {
+        app.receivedEvent('online');
+    },
+
+	
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+   
+		switch (id) {
+			case 'deviceready':
+				onDeviceReady();
+				displayPhoneStatus();
+			case 'load':
+				console.log('receivedEvent  ' + id);
+				displayPhoneStatus();
+			case 'offline':
+				console.log('receivedEvent  ' + id);
+				onOffline();
+				displayPhoneStatus();
+			case 'online':
+				console.log('receivedEvent  ' + id);
+				onOnline();
+				displayPhoneStatus();
+			break;
+			default:
+				console.log('receivedEvent unhandled! ' + id);
+			break;
+		}
+		
+         console.log('Received Event:(' + id + ')');
+		
     }
-};
+	
+}
+
+
+
+
+function onOnline() {
+	// set status
+	console.log('onOnline ...');
+	networkDetection();
+	isConnected = true;
+}
+function onOffline() {
+	// set status
+	console.log('onOffline ...');
+	networkDetection();
+	isConnected = false;
+}
+
+function networkDetection() {
+	if (isPhoneGapReady) {
+		// as long as the connection type is not none,
+		// the device should have Internet access
+		if (navigator.network.connection.type != Connection.NONE) {
+			isConnected = true;
+		}
+		// determine if this connection is high speed or not
+		switch (navigator.network.connection.type) {
+			case Connection.ETHERNET:
+			case Connection.WIFI:
+			case Connection.CELL_3G:
+			case Connection.CELL_4G:
+				isHighSpeed = true;
+			break;
+			
+			default:
+				isHighSpeed = false;
+			break;
+		}
+	}
+}
+
+function onDeviceReady() {
+	console.log('onDeviceReady...');
+	// set to true
+	isPhoneGapReady = true;
+	// detect for network access
+	networkDetection();
+}
+
+function displayPhoneStatus() {
+
+var element = document.getElementById('deviceProperties');
+
+element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+                            'Device Cordova: '  + device.cordova  + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />' +
+							'iConnected: '  + isConnected  + '<br />' +
+							'isHighSpeed: '  + isHighSpeed  + '<br />' +
+							'isPhoneGapReady: '  + isPhoneGapReady  + '<br />'
+
+	
+}
+
