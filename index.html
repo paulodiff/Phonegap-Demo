@@ -3,57 +3,46 @@
     <head>
 		<meta http-equiv="pragma" content="no-cache" />
         <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-		<link href="topcoat/css/topcoat-mobile-light.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="index.css" />
+		
+		<link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
+	    <link rel="stylesheet" type="text/css" href="index.css" />
         <title>Phone Gap Demo - Topcoat - Zepto - GPS - Maps - MongoDB</title>
     </head>
 	
     <body>
-	<div class="topcoat-navigation-bar">
-		<div class="topcoat-navigation-bar__item center full">
-			<h1 class="topcoat-navigation-bar__title">Phone Gap Demo - Topcoat - Zepto - GPS - Maps - MongoDB</h1>
+	
+	<div data-role="page">
+		<div data-role="header"><h1>Page Title</h1></div>
+			<div data-role="content">
+			
+					<p id="deviceProperties">Loading device properties...</p>
+					<ul data-role="listview" data-inset="true" data-filter="false">
+						<li><a href="#">Acura</a></li>
+						<li><a href="#">Cadillac</a></li>
+						<li><a href="#">Ferrari</a></li>
+					</ul>
+			
+			</div>
+		<div data-role="footer" class="ui-bar">
+			<a href="#" data-icon="plus">Add</a>
+			<a href="#" data-icon="arrow-u">Up</a>
+			<a href="#" data-icon="arrow-d">Down</a>
 		</div>
 	</div>
 	
-		
-    <div class='details'>
-	
-	<p>PhoneGap data<p>
-	<p id="deviceProperties">Loading device properties...</p>
-	<a class="topcoat-button--cta" >Button</a>	
-	
-	<a class="topcoat-icon-button">
-		<span class="topcoat-icon topcoat-icon--menu-stack"></span>
-	</a>
-
-	<a href="#" onclick="showAlert(); return false;" id="btnAddItem" class="topcoat-icon-button" >
-		<span class="topcoat-icon icon-mail"></span>
-	</a>
 	
 
 
-    
-	<div id="scroller" class="topcoat-list__container">
-        <h3 id="path" class="topcoat-list__header" style="border-right: solid 1px #3b3e40;">PhoneGap Detail</h3>
-		<ul class="topcoat-list list actions">
-			<li class="topcoat-list__item"><a href="#test">Test01<div class="action-icon icon-mail"></div></a></li>
-			<li class="topcoat-list__item"><a href="#test">Test02<div class="action-icon icon-sms"></div>	</a></li>
-		</ul>
-    </div>
+	
+	
 
-    <h3 id="filePath" class="topcoat-list__header">&nbsp;</h3>
 
-    <div id="content">
-        <img id="image" style="display: none;"/>
-        <div id="text" style="display: none;"></div>
-    </div>
-</div>
 	
 		
         <script type="text/javascript" src="_cordova.js"></script>
 		<script type="text/javascript" src="jquery-1.10.1.js"></script>
+		<script type="text/javascript" src="jquery.mobile-1.3.1.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();

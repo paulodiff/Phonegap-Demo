@@ -1,28 +1,59 @@
 Phonegap-Demo
 =============
 
-First project with jqmobi + phonegap 
 
 
-Extract d:\Downloads\phonegap-2.8.0.zip\phonegap-2.8.0\lib\android\example\assets\www\ 
 
-
+- PhoneJS - Test  
+- PhoneJS - Splashscreen da usare quello di PhoneGap ....
+- PhoneJS - test con PhoneJS ... 
 
 
 =================================================================================================
 
 
 *Il tour porta a casa ANGULARJS
+*Ma prima si parte con jquery mobile per avere dei risultati immediati ... poi si lima
 
 
 SVILUPPO
 ----------------------
+
+http://www.tricedesigns.com/2013/01/18/my-workflow-for-developing-phonegap-applications/
+http://www.adobe.com/devnet/phonegap/articles/creating-apps-with-phonegap-lessons.html
+Esempio con più componenti
+http://www.tricedesigns.com/2012/10/02/introducing-walkable-a-new-sample-app-for-phonegap/
+
 + Impostazione Progetto GITHUB [OK]
 + Ambiente PhoneGap
 	http://127.0.0.1:8989/gitroot/Phonegap-Demo/index.html?enableripple=cordova-2.0.0
-- PROBLEMI CON jqmobi - INTEL 
++ sostituito corbova.js OK	
+
+? Aggiungere jquery mobile ????????
+	http://flippinawesome.org/2013/04/15/phonegap-build-step-5/
+
+	http://stackoverflow.com/questions/10945643/correct-way-of-using-jquery-mobile-phonegap-together
+	http://apachecordova.blogspot.it/2012/11/who-is-murdering-phonegap-its-jquery.html
+
+
+*  Usare backbone.js!
+*  Usare i template *
+	
+	Visualizzatori per app di cellulari
+*	http://triceam.github.io/app-UI/
+	
+* Usare handlebar per i template
+	http://abbett.org/post/loading-handlebars-templates-via-ajax
+	http://stackoverflow.com/questions/15887275/jquery-mobile-and-handlebars
+	http://stackoverflow.com/questions/15655896/handlebar-template-jquery-mobile-dynamic-listviews
+
+- PROBLEMI CON jqmobi - INTEL  (problemi di integrazione)
+
+
+- enyojs framework....
+
 + Test API di base
-+ Topcoat
+- Topcoat [NO] troppo scarno ma velocissimo
 * Accesso ai dati MongoDB
 * Mappe con http://leafletjs.com/examples/mobile.html
 * Deploy su PhoneGap Builder ADOBE
@@ -89,9 +120,9 @@ Terze parti service
 -------------------
 Parse.com (DB, dati push)
 MongoDB
-http://pusher.com/ Realtime
+http://pusher.com/ Realtime and Push Notification
 https://developers.apigee.com/ PUSH NOTIFICATION
-
+http://www.pushwoosh.com/ Realtime and Push Notification
 ARCHITETTURA - PhoneGap APP
 ---------------------------------
 #1 data abstraction accesso ai dati
