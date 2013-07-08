@@ -4,6 +4,23 @@ Phonegap-Demo
 
 
 
+- Ora modifica su MongoDB dei dati MongoLab cloud db - 1mongolab.com  demo_123/root/password
+	https://api.mongolab.com/api/1/databases/my-db/collections/my-coll?apiKey=myAPIKey
+	https://api.mongolab.com/api/1/databases/demo_123/collections/projects?apiKey=DFfH9ZxX0DdVQCHKMphyMwteiLdvT23_
+    Get a document
+	https://api.mongolab.com/api/1/databases/demo_123/collections/geolocations/51cd52fce4b08a03073950ff?apiKey=DFfH9ZxX0DdVQCHKMphyMwteiLdvT23_
+	
+	
+	
+LIBRERIA
+https://github.com/pkozlowski-opensource/angularjs-mongolab
+http://www.intridea.com/blog/2011/2/8/fun-with-jquery-deferred
+	
+	NOTE: https://support.mongolab.com/entries/20433053-rest-api-for-mongodb
+	
+- Caricare una lista....
+- jquery deferred object http://richardneililagan.com/2011/05/using-deferred-objects-in-jquery-1-5/
+- Sistemata index.js e sistemato anche la gestione della lista
 - PhoneJS - Test  
 - PhoneJS - Splashscreen da usare quello di PhoneGap ....
 - PhoneJS - test con PhoneJS ... 
